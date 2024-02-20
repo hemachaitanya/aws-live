@@ -10,4 +10,29 @@ sudo apt-get install python3-pymysql
 sudo apt-get install python3-boto3
 
 # for running application
-sudo python3 Empapp.py
+sudo python3 EmpApp.py
+
+
+###  procedure
+
+* first we create one s3 bucket , one rds(mysql in public) , one ec2 instance
+
+*  in ec2 we install pytho-flask,pymysql,boto3,python3 and mysql client using above commands
+
+
+* next we create database after entering mysql
+
+    sudo mysql -h  "endpoint-url" -u "user"-p
+    create databade <name>;
+    use <name>;
+    create table <tablename>
+    CREATE TABLE `<db-name>`.`<table-name>` (emp_id int not null,first_name varchar(255) NOT NULL,lastname varchar(255) NOT NULL,pri_skill varchar(255
+     ),location varchar(255));
+    INSERT INTO <table-name> ( emp_id, first_name, last_name,pri_skill, location  )VALUES ('99','babool','eshu','Devops','varangal');
+    select * from <table-name>
+
+* already we modify the congig.py file with our RDS endpoint,s3 bucket-name , region, db name &password
+
+* run our application by using 
+
+        sudo python3 EmpApp.py
